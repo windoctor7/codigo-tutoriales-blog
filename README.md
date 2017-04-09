@@ -29,7 +29,7 @@ Para ejemplos con Tapestry
 Se enlista a continuación una pequeña descripción de cada una de las carpetas de código existente y el enlace al tutorial de mi blog que explica su funcionamiento.
 
 
-| Carpeta de código | Descripción
+| Código | Descripción
 |:-:|---|
 | [spring-scheduler](https://windoctor7.github.io/Tareas-con-Spring-Scheduler.html)| Se explica como programar tareas que se ejecuten automáticamente usando la anotación `@Scheduled`de Spring. Una excelente alternativa a Quartz. |
 | [spring-set-profile](https://github.com/windoctor7/codigo-tutoriales-blog/tree/master/spring-set-profile)| Frecuentemente necesitamos obtener recursos o urls que varian dependiendo si estamos ejecutando la aplicación en desarrollo, QA o producción. Este tutorial explica como hacerlo de forma muy fácil usando los perfiles de Spring.  |
