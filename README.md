@@ -3,9 +3,12 @@ Frecuentemente se asocia a Java con un lenguaje lento y verboso para desarrollar
 En mi [blog](https://windoctor7.github.io/) hago un intento nada forzado para cambiar esta perspectiva y dar a conocer 
 herramientas y frameworks que nos permiten desarrollar aplicaciones con la plataforma Java de forma ágil y robusta.
 
-## ¿Qué tipo de código voy a encontrar aquí?
-Principalmente encontrarás código fuente que usa [Spring Boot](https://projects.spring.io/spring-boot/), [Tapestry](http://tapestry.apache.org).
-Todos los ejemplos están construidos con Gradle.
+## ¿Qué ejemplos voy a encontrar aquí?
+Principalmente encontrarás código fuente que usa [Spring Boot](https://projects.spring.io/spring-boot/), [Tapestry](http://tapestry.apache.org), [MongoDB](https://www.mongodb.com/es) y de algunos lenguajes que soporta la JVM como por ejemplo Groovy, Scala y Kotlin. 
+
+Todos los ejemplos están construidos con Gradle por lo que clonar el repositorio y abrirlo con tu IDE favorito será muy fácil.
+
+
 
 ## ¿Como ejecutar los ejemplos?
 Mediante el Wrapper de Gradle.
@@ -28,5 +31,5 @@ Se enlista a continuación una pequeña descripción de cada una de las carpetas
 
 | Carpeta de código     | Descripción
 |:-:     |---|
-| [spring-scheduler](https://windoctor7.github.io/Tareas-con-Spring-Scheduler.html)     | Se explica como programar tareas que se ejecuten automáticamente usando la anotación `@Scheduled`de Spring. Una excelente alternativa a Quartz. |
-| [spring-set-profile](https://github.com/windoctor7/codigo-tutoriales-blog/tree/master/spring-set-profile)     | Frecuentemente necesitamos obtener recursos o urls que varian dependiendo si estamos ejecutando la aplicación en desarrollo, QA o producción. Este tutorial explica como hacerlo de forma muy fácil usando los perfiles de Spring.  |
+| [spring-scheduler](https://windoctor7.github.io/Tareas-con-Spring-Scheduler.html)| Se explica como programar tareas que se ejecuten automáticamente usando la anotación `@Scheduled`de Spring. Una excelente alternativa a Quartz. |
+| [spring-set-profile](https://github.com/windoctor7/codigo-tutoriales-blog/tree/master/spring-set-profile)| Frecuentemente necesitamos obtener recursos o urls que varian dependiendo si estamos ejecutando la aplicación en desarrollo, QA o producción. Este tutorial explica como hacerlo de forma muy fácil usando los perfiles de Spring.  |
