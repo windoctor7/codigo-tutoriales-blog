@@ -20,6 +20,8 @@ Para ejemplos con Spring Boot
   
 Para ejemplos con Tapestry
 
-  `$ ./gradlew jettyRun`
+  ```bash 
+  $ ./gradlew jettyRun
+  ```
   
   
