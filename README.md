@@ -12,7 +12,7 @@ Mediante el Wrapper de Gradle.
 
 1. Clona el repositorio ó baja el ZIP y descomprimelo en tu computadora.
 1. Sitúate en la carpeta específica del ejemplo que deseas ejecutar.
-1. Ahí encontrarás 2 archivos, gradlew y gradlew.bat
+1. Ahí encontrarás 2 archivos, gradlew y gradlew.bat que dependiendo del sistema operativo deberás usar. Asumiendo que la mayoría usa Linux o Mac OS ejecutaríamos esto:
 
 Para ejemplos con Spring Boot
 
@@ -20,12 +20,8 @@ Para ejemplos con Spring Boot
   
 Para ejemplos con Tapestry
 
-  ``` bash 
-  $ ./gradlew jettyRun
-  ```
-  
-  ```ruby
-  gem 'jekyll-seo-tag'
-  ```
+  `$ ./gradlew jettyRun`
+  
+## Índice del código
 
-  
+* spring-scheduler -> 
