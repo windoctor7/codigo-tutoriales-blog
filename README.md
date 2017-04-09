@@ -20,8 +20,12 @@ Para ejemplos con Spring Boot
   
 Para ejemplos con Tapestry
 
-  ```bash 
+  ``` bash 
   $ ./gradlew jettyRun
   ```
-  
+  
+  ```ruby
+  gem 'jekyll-seo-tag'
+  ```
+
   
