@@ -8,4 +8,18 @@ Principalmente encontrarás código fuente que usa [Spring Boot](https://project
 Todos los ejemplos están construidos con Gradle.
 
 ## ¿Como ejecutar los ejemplos?
-Bajándote 
+Mediante el Wrapper de Gradle.
+
+1. Clona el repositorio ó baja el ZIP y descomprimelo en tu computadora.
+1. Sitúate en la carpeta específica del ejemplo que deseas ejecutar.
+1. Ahí encontrarás 2 archivos, gradlew y gradlew.bat
+
+Para ejemplos con Spring Boot
+
+  `$ ./gradlew bootRun`
+  
+Para ejemplos con Tapestry
+
+  `$ ./gradlew jettyRun`
+  
+  
