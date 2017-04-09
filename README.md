@@ -22,6 +22,11 @@ Para ejemplos con Tapestry
 
   `$ ./gradlew jettyRun`
   
-## Índice del código
+## Índice de código y enlace al tutorial
+Se enlista a continuación una pequeña descripción de cada una de las carpetas de código existente y el enlace al tutorial de mi blog que explica su funcionamiento.
 
-* spring-scheduler -> 
+
+| Carpeta código | Descripción
+|:-:|---|
+| [spring-scheduler](https://windoctor7.github.io/Tareas-con-Spring-Scheduler.html)  |   |
+|   |   |
