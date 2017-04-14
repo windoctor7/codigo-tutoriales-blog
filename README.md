@@ -35,3 +35,7 @@ Se enlista a continuación una pequeña descripción de cada una de las carpetas
 | [spring-set-profile](https://github.com/windoctor7/codigo-tutoriales-blog/tree/master/spring-set-profile)| Frecuentemente necesitamos obtener recursos o urls que varian dependiendo si estamos ejecutando la aplicación en desarrollo, QA o producción. Este tutorial explica como hacerlo de forma muy fácil usando los perfiles de Spring.  |
 | [spring-async](https://windoctor7.github.io/Tareas-asincronas-Spring.html)  | Este Cookbook simula el registro de un usuario en una base de datos mientras envia correos electronicos reales en segundo plano usando el servidor SMTP de Google  |
 | [spring-rest-1](https://github.com/windoctor/SpringBoot-Ejemplos)  | Video que muestra como desarrollar un sencillo servicio web tipo REST usando Spring Boot. |
+|[spring-retry](https://github.com/windoctor7/codigo-tutoriales-blog/tree/master/spring-retry) | Cuando el envío de un correo electrónico falla ó un servicio web no responde por intermitencias en la red o porque el servidor está caído, es importante tener un sistema preparado para reintentar la operación. En este cookbook veremos como hacer esto con spring-retry. |
+
+
+
