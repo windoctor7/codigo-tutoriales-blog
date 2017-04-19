@@ -18,13 +18,6 @@ public class Main {
     public List<String> sorted(){
         List<Product> products = Util.getProducts();
         Stream<String> streams = products.stream()
-                .filter(p -> p.getUnitsInStock()<10)
-                .sorted(
-                        Comparator
-                                .comparing(Product::getUnitsInStock)
-                                .reversed()
-                                .thenComparing(Product::getName)
-                )
                 .map(Product::getName)
                 ;
 
