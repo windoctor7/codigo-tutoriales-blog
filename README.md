@@ -17,13 +17,17 @@ Mediante el Wrapper de Gradle.
 1. Sitúate en la carpeta específica del ejemplo que deseas ejecutar.
 1. Ahí encontrarás 2 archivos, gradlew y gradlew.bat que dependiendo del sistema operativo deberás usar. Asumiendo que la mayoría usa Linux o Mac OS ejecutaríamos esto:
 
+Revisa en la carpeta del código fuente del proyecto, si no existen otras indicaciones en el archivo README.md entonces puedes ejecutar el proyecto generalmente de la siguiente forma: 
+
 Para ejemplos con Spring Boot
 
   `$ ./gradlew bootRun`
   
-Para ejemplos con Tapestry
+Para ejemplos que usen Tapestry
 
   `$ ./gradlew jettyRun`
+  
+Si el archivo README.md del proyecto contiene indicaciones adicionales, entonces deberás seguir tales.
   
 ## Índice de código
 Se enlista a continuación una pequeña descripción de cada una de las carpetas de código existente y el enlace al tutorial de mi blog que explica su funcionamiento.
@@ -37,3 +41,5 @@ Se enlista a continuación una pequeña descripción de cada una de las carpetas
 | [spring-rest-1](https://github.com/windoctor/SpringBoot-Ejemplos)  | Video que muestra como desarrollar un sencillo servicio web tipo REST usando Spring Boot. |
 |[spring-retry](https://github.com/windoctor7/codigo-tutoriales-blog/tree/master/spring-retry) | Cuando el envío de un correo electrónico falla ó un servicio web no responde por intermitencias en la red o porque el servidor está caído, es importante tener un sistema preparado para reintentar la operación. En este cookbook veremos como hacer esto con spring-retry. |
 | [spring-statemachine](https://github.com/windoctor7/codigo-tutoriales-blog/tree/master/spring-state-machine)  | En este cookbook modelaremos una sencilla encuesta con máquinas de estados usando el proyecto oficial spring-statemachine. |
+| [spring-webflux](https://github.com/windoctor7/codigo-tutoriales-blog/tree/master/spring-web-flux)   | En este tutorial se muestra un sencillo ejemplo usando programación reactiva de Spring 5 (Spring Boot 2)  |
+| [spring-auth-jwt](https://github.com/windoctor7/codigo-tutoriales-blog/tree/master/spring-auth-jwt)  | En este tutorial aprenderás como implementar seguridad basada en token a tus servicios REST mediante JSON Web Token.  |
