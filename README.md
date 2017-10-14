@@ -43,3 +43,4 @@ Se enlista a continuación una pequeña descripción de cada una de las carpetas
 | [spring-statemachine](https://github.com/windoctor7/codigo-tutoriales-blog/tree/master/spring-state-machine)  | En este cookbook modelaremos una sencilla encuesta con máquinas de estados usando el proyecto oficial spring-statemachine. |
 | [spring-webflux](https://github.com/windoctor7/codigo-tutoriales-blog/tree/master/spring-web-flux)   | En este tutorial se muestra un sencillo ejemplo usando programación reactiva de Spring 5 (Spring Boot 2)  |
 | [spring-auth-jwt](https://github.com/windoctor7/codigo-tutoriales-blog/tree/master/spring-auth-jwt)  | En este tutorial aprenderás como implementar seguridad basada en token a tus servicios REST mediante JSON Web Token.  |
+| [spring4-sse](https://github.com/windoctor7/codigo-tutoriales-blog/tree/master/Spring4-SSE)  | Muestra código de ejemplo del uso de Server-Sent Events usando Spring 4.  |
