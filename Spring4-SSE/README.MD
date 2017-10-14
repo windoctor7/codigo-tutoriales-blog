@@ -22,24 +22,21 @@ La nueva versión de Spring 5 trae un mejor y más sencillo soporte para SSE, pe
 
 Entre los métodos más importantes de la clase SseEmitter, podemos encontrar los siguientes:
 
-{% highlight java %}
-// Permite enviar un mensaje al cliente, normalmente el navegador.
-send(java.lang.Object object) 
+	// Permite enviar un mensaje al cliente, normalmente el navegador.
+	send(java.lang.Object object) 
 
-// Permite registrar el código que se ejecutará una vez que el proceso asíncrono concluya.
-onCompletion(java.lang.Runnable callback) 
+	// Permite registrar el código que se ejecutará una vez que el proceso asíncrono concluya.
+	onCompletion(java.lang.Runnable callback) 
 
-// Se debe llamar cuando el proceso haya concluido.
-complete() 
+	// Se debe llamar cuando el proceso haya concluido.
+	complete() 
 
-// Permite registrar un error cuando el proceso haya lanzado una excepción.
-completeWithError(java.lang.Throwable ex) 
-{% endhighlight %}
+	// Permite registrar un error cuando el proceso haya lanzado una excepción.
+	completeWithError(java.lang.Throwable ex) 
 
 
 Un sencillo ejemplo sería el siguiente controller:
-
-{% highlight java %}
+```java
 @RestController
 public class SseController {
     @GetMapping("/sse")
@@ -49,7 +46,7 @@ public class SseController {
         return emitter;
     }
 }
-{% endhighlight %}
+```
 
 Si ejecutamos el proyecto con bootRun y desde el navegador ingresamos a [http://localhost:8080/sse](http://localhost:8080/sse) podemos ver la siguiente salida:
 
@@ -64,7 +61,7 @@ Sin embargo, debía crear una sencilla página que permitiera lanzar este y algu
 
 Primero creamos la clase que se va a encargar de crear el archivo de texto. Esta misma clase será la que esté anotada con ``@Scheduled`` y se ejecute automáticamente.
 
-{% highlight java %}
+```java
 @Component
 public class GenerarArchivo {
 
@@ -81,7 +78,7 @@ public class GenerarArchivo {
     }
 
 }
-{% endhighlight %}
+```
 
 Para escribir en el archivo de texto, usamos [commons io](https://commons.apache.org/proper/commons-io/), así que se agrega la dependencia al build.gradle
 
@@ -90,7 +87,7 @@ Para escribir en el archivo de texto, usamos [commons io](https://commons.apache
 
 Para habilitar la ejecución de Scheduled, debemos agregar la anotación ``@EnableScheduling``
 
-{% highlight java %}
+```java
 @SpringBootApplication
 @EnableScheduling
 public class Spring4SseApplication {
@@ -99,13 +96,13 @@ public class Spring4SseApplication {
 		SpringApplication.run(Spring4SseApplication.class, args);
 	}
 }
-{% endhighlight %}
+```
 
 Al correr el proyecto con la tarea bootRun, podemos ver que nuestra tarea inicia su ejecución algunos segundos después y genera un archivo de texto en la ruta indicada.
 
 Sin embargo, como mencioné, la intensión es tener la posibilidad de ejecutar este proceso de forma manual, por lo que debemos crear un controlador REST que podamos invocar desde una página web.
 
-{% highlight java %}
+```java
 @RestController
 public class SseController {
 
@@ -121,7 +118,7 @@ public class SseController {
     }
 
 }
-{% endhighlight %}
+```
 
 Finalmente para ejecutar la tarea desde el navegador, vamos a cambiar la calendarización de nuestro job para que se ejecute cada 5 minutos y no cada 15 segundos como lo teniamos,
 
@@ -131,7 +128,7 @@ Si ejecutamos nuevamente el proyecto con bootRun y accedemos desde el navegador 
 
 Para solucionar el problema anterior, deberemos agregar la anotación ``@Async`` a nuestro método
 
-{% highlight java %}
+```java
 @Component
 public class GenerarArchivo {
 
@@ -148,11 +145,11 @@ public class GenerarArchivo {
         System.out.println("Finalizando escritura de archivo");
     }
 }
-{% endhighlight %}
+```
 
 Finalmente agregar la anotación ``@EnableAsync``
 
-{% highlight java %}
+```java
 @SpringBootApplication
 @EnableScheduling
 @EnableAsync
@@ -162,13 +159,13 @@ public class Spring4SseApplication {
 		SpringApplication.run(Spring4SseApplication.class, args);
 	}
 }
-{% endhighlight %}
+```
 
 Esto permitirá ejecutar al método ``generar()`` en un hilo separado. Puedes ver un tutorial sobre procesos asíncronos en este otro [tutorial que escribí](https://windoctor7.github.io/Tareas-asincronas-Spring.html). 
 
 Si corremos de nueva cuenta el proyecto y accedemos desde el navegador al endpoint **/execute** vemos que la respuesta ahora es inmediata, sin embargo después de algunos segundos obtenremos un error de timeout en el log de la aplicación. Para establecer un timeout a los procesos asíncronos de nuestra aplicación, debemos agregar la siguiente clase,
 
-{% highlight java %}
+```java
 @Configuration
 public class WebMvcConfig extends WebMvcConfigurerAdapter {
 
@@ -177,13 +174,13 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
         configurer.setDefaultTimeout(1000000);
     }
 }
-{% endhighlight %}
+```
 
 Ya está!... Bueno, claramente el diseño del controller no es bueno, además tenemos el problema que solo podemos ejecutar un método en específico. Que pasaría si queremos diseñar un front con una lista de Jobs a ejecutar? ¿Tendríamos que crear un endpoint para cada job?... La solución es usar el [API reflection de Java](http://java-white-box.blogspot.mx/2016/02/api-reflect-que-es-reflexion-por-donde.html).
 
 Vamos a crear una clase que se encargue de ejecutar cualquier método que tenga la anotación ``@Scheduled``
 
-{% highlight java %}
+```java
 @Component
 public class JobExecutor implements IJobExecutor{
 
@@ -227,13 +224,13 @@ public class JobExecutor implements IJobExecutor{
 
     }
 }
-{% endhighlight %}
+```
 
 ``EMITTERS`` será un [ConcurrentHashMap](https://docs.oracle.com/javase/7/docs/api/java/util/concurrent/ConcurrentHashMap.html) donde guardaremos objetos SseEmitter. Dado que nuestro Job escribe en un archivo de texto, es buena idea validar si el Map EMITTERS ya contiene el job ``GenerarArchivo`` y en caso de contenerlo devolver el mensaje.
 
 El código del controller sufre modificaciones y ahora debería quedar más o menos como sigue:
 
-{% highlight java %}
+```java
 @RestController
 public class SseController {
 
@@ -283,14 +280,14 @@ public class SseController {
     }
 
 }
-{% endhighlight %}
+```
 
 ## Publicando el Evento
 Estamos casi listos para probar nuestro ejemplo, sin embargo, falta algo muy importante y es notificar al navegador cuando la ejecución del método ``generar()`` concluya.
 
 Para ello, utilizaremos el mecanismo de eventos de Spring. Basta con modificar la clase GenerarArchivo y agregar un publicador de eventos ``ApplicationEventPublisher``
 
-{% highlight java %}
+```java
 @Component
 public class GenerarArchivo {
     
@@ -311,11 +308,11 @@ public class GenerarArchivo {
         System.out.println("Finalizando escritura de archivo");
     }
 }
-{% endhighlight %}
+```
 
 A partir de la versión 4.2 de Spring, la publicación de eventos resulta muy sencilla, basta con agregar a nuestra clase ``JobExecutor`` un método anotado con ``@EventListener``
 
-{% highlight java %}
+```java
     @EventListener
     public void eventListener(MensajeEvent mensajeEvent) throws IOException {
         String bean = mensajeEvent.getBeanClass();
@@ -323,8 +320,8 @@ A partir de la versión 4.2 de Spring, la publicación de eventos resulta muy se
         String msg = String.format("El Job %s ha finalizado correctamente", bean);
         emitter.send(new Mensaje(2,msg));
         emitter.complete();
-    }
-{% endhighlight %}
+    }
+```
 
 Con lo anterior, cuando el método ``generar()`` concluya publicaremos el evento con la línea 
 
