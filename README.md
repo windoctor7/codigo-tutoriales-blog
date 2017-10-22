@@ -35,7 +35,8 @@ Se enlista a continuación una pequeña descripción de cada una de las carpetas
 
 | Código | Descripción
 |:-:|---|
-| [spring-scheduler](https://windoctor7.github.io/Tareas-con-Spring-Scheduler.html)| Se explica como programar tareas que se ejecuten automáticamente usando la anotación `@Scheduled`de Spring. Una excelente alternativa a Quartz. |
+| [inyeccion-dependencia](https://github.com/windoctor7/codigo-tutoriales-blog/tree/master/inyeccion-dependencia)| Se explica el concepto de inyección de dependencia utilizando Spring |
+| [spring-scheduler](https://github.com/windoctor7/codigo-tutoriales-blog/tree/master/spring-scheduler)| Se explica como programar tareas que se ejecuten automáticamente usando la anotación `@Scheduled`de Spring. Una excelente alternativa a Quartz. |
 | [spring-set-profile](https://github.com/windoctor7/codigo-tutoriales-blog/tree/master/spring-set-profile)| Frecuentemente necesitamos obtener recursos o urls que varian dependiendo si estamos ejecutando la aplicación en desarrollo, QA o producción. Este tutorial explica como hacerlo de forma muy fácil usando los perfiles de Spring.  |
 | [spring-async](https://windoctor7.github.io/Tareas-asincronas-Spring.html)  | Este Cookbook simula el registro de un usuario en una base de datos mientras envia correos electronicos reales en segundo plano usando el servidor SMTP de Google  |
 | [spring-rest-1](https://github.com/windoctor/SpringBoot-Ejemplos)  | Video que muestra como desarrollar un sencillo servicio web tipo REST usando Spring Boot. |
