@@ -1,0 +1,15 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+
+dependencies {
+    compile 'org.springframework:spring-context:4.3.7.RELEASE'
+    compile 'org.springframework.statemachine:spring-statemachine-core:1.2.3.RELEASE'
+}

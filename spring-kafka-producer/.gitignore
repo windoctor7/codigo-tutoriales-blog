@@ -1,0 +1,57 @@
+<<<<<<< HEAD
+.gradle
+/build/
+!gradle/wrapper/gradle-wrapper.jar
+=======
+HELP.md
+.gradle
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+>>>>>>> 2d54103 (consumidor kafka)
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+<<<<<<< HEAD
+=======
+.sts4-cache
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+>>>>>>> 2d54103 (consumidor kafka)
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+<<<<<<< HEAD
+
+### NetBeans ###
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+=======
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code ###
+.vscode/
+>>>>>>> 2d54103 (consumidor kafka)
